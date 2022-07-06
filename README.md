@@ -7,7 +7,7 @@
 * [Enhancements](#enhancements)
 
 ## Application Overview
-The robot application is built using Java and Spring Boot for backend and Angular for frontend. Robot commands can be passed from the UI to backend through POST API. The API validates the input commands and returns the final position and direction of the robot, which is rendered in the grid in case of valid scenario or an error message is displayed in case of invalid scenario.
+The robot application is built using Java and Spring Boot for backend and Angular for frontend. Robot commands can be passed from the user interface to backend through API calls. The API validates the input commands and returns the final position and direction of the robot. The output is used to render the robot in the grid. An error message will be displayed for invalid input.
 	
 ## Technologies
 Project is created with the following tech stack and their respective versions.
@@ -20,14 +20,14 @@ Project is created with the following tech stack and their respective versions.
 ## Setup
 
 * Start the backend application using an IDE with Spring Boot run configuration and open http://localhost:8080/
-* Run the frontend locally using npm install and ng serve commands. After installation is successful and application gets started, open http://localhost:4200/
+* Run the frontend using npm install and ng serve commands. After installation is successful and application gets started, open http://localhost:4200/
 
 
 ## Enhancements
 
 * Different error messages can be displayed to the user, one in case of invalid command type and two in case of any invalid scenario(robot crossing the grid limits).
-* Inline styling is used in the frontend which can be externalized into the component css file.
+* Inline styling used in the frontend can be externalized into an component css file.
 * Tests can be added for frontend application.
-* User can be given the option to select the commands through input/dropdown instead of a single text input box.
-* The current position/direction of the robot can be passed as an input to the API to generate the resultant position and direction of the robot for the next user command.
-* Grid sizing and styling after robot rendering in case of valid scenario can be improved.
+* User input can be streamlined. For example, the robot input commands can be changed from single input element to multiple input/dropdown.
+* The current position/direction of the robot can be passed as an input to the API to generate the final position and direction of the robot for the next user command.
+* Grid sizing and styling after robot rendering could be improved to provide more user friendly experience.
