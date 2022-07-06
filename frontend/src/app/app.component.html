@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+  <h2 class="text-primary" style="text-align: center;margin-top: 10px;">Welcome to Robot Task Challenge</h2>
+
+  <form style="margin:10px">  
+
+    <div class="form-group">
+      <textarea class="form-control" name="script" id="formTextArea"
+        rows="6" placeholder="Enter the Robot Script here" [(ngModel)]="script"></textarea>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-primary" 
+        style="margin-top:10px; margin-right: 10px;" (click)="submitScript()">Submit</button>
+      <button type="button" class="btn btn-primary"
+       style="margin-top:15px;" (click)="tryAgainOrReset()">Try Again/Reset</button>
+    </div>
+
+  </form>
+
+  <div class="row" style="text-align: center;margin: 10px;" *ngIf="robotPositionFetched">
+
+    <table class="table table-bordered" style="border: 1px black">
+      <tbody>
+        <tr *ngFor="let _ of [].constructor(xMaxCoordinate); let i = index">
+          <td *ngFor="let _ of [].constructor(yMaxCoordinate); let j = index"
+             id="{{ i + '_' + j}}" [innerHtml]="getRobotImage(i, j)"></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="row" *ngIf="showErrorMessage">
+    <span class="text-danger" style="text-align: center;margin-top: 10px;">Coordinates for the robot cannot be fetched!</span>
+  </div>
+
+</div>
